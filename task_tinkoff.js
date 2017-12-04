@@ -14,20 +14,18 @@ let result = [];
 for (let i = 0; i < a.length; i++) {
     let resArr = [a[i]];
     let check = true;
-    for (let j = 0; j < a.length; j++) {
+    for (let j = i + 1; j < a.length; j++) {
         if (a[i].split("").sort().join('') === a[j].split("").sort().join('') && a[i] !== a[j]) {
             resArr.push(a[j]);
         }
     }
     for (let key in result) {
-        for (let _key in result[key]) {
-            if (result[key][_key] === resArr[0]) {
-                check = false;
-            }
+        if(result[key].indexOf(resArr[0]) !== -1){
+            check = false;
         }
     }
     if (check) {
-        result.push(resArr);
+        result.push(resArr);    
     }
 }
 console.log(result);
