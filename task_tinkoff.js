@@ -12,22 +12,10 @@ let a = [
 ]
 let result = [];
 for (let i = 0; i < a.length; i++) {
-    let word = a[i].split("");
     let resArr = [a[i]];
     let check = true;
     for (let j = 0; j < a.length; j++) {
-        let _word = a[j].split("");
-        let countChar = 0;
-
-        for (let k = 0; k < word.length; k++) {
-            for (let m = 0; m < _word.length; m++) {
-                if (word[k] === _word[m]) {
-                    countChar++;
-                    break;
-                }
-            }
-        }
-        if (countChar === a[i].length && a[i] !== a[j] && word.length === _word.length) {
+        if (a[i].split("").sort().join('') === a[j].split("").sort().join('') && a[i] !== a[j]) {
             resArr.push(a[j]);
         }
     }
