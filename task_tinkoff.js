@@ -49,3 +49,14 @@ console.log(toObject(args));
 // sum(1)(2)(3)....(n)(); // 1 + 2 + 3 + ... + n
 // sum(1)(10)(); // 11
 // sum(1)(); // 1
+function sum(a) {
+    var sum = a;
+    f.toString = function () {
+        return sum;
+    };
+    function f(b) {
+        sum += b;
+        return f;
+    }
+    return f;
+}
