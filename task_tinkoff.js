@@ -60,3 +60,4 @@ function sum(a) {
     }
     return f;
 }
+console.log(sum(1)(2)(3));
