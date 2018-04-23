@@ -1,0 +1,2 @@
+const toString = {}.toString;
+console.log(toString.call(e.target));
